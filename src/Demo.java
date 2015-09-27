@@ -1,13 +1,32 @@
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.Scanner;
+
 
 public class Demo {
     // psvm = shortcut to "public static void main"
 
     public static void main(String[] args) {
 
-        LinkedList<String> placesToVisit = new LinkedList<String>();
+        LinkedList<String> placesToVisit = new LinkedList<>();
+
+        addInOrder(placesToVisit, "Sydney");
+        addInOrder(placesToVisit, "Melbourne");
+        addInOrder(placesToVisit, "Brisbane");
+        addInOrder(placesToVisit, "Perth");
+        addInOrder(placesToVisit, "Canberra");
+        addInOrder(placesToVisit, "Adelaide");
+        addInOrder(placesToVisit, "Darwin");
+
+        printList(placesToVisit);
+
+        addInOrder(placesToVisit, "Alice Springs");
+        addInOrder(placesToVisit, "Darwin");
+        printList(placesToVisit);
+
+
+        /*
         placesToVisit.add("Sydney");
         placesToVisit.add("Melbourne");
         placesToVisit.add("Brisbane");
@@ -25,8 +44,10 @@ public class Demo {
 
         placesToVisit.remove(4);
         printList(placesToVisit);
+        */
 
     }
+
 
 
     public static void printList(LinkedList<String> linkedList) {
@@ -37,6 +58,7 @@ public class Demo {
         }
         System.out.println("==========");
     }
+
 
 
 
@@ -61,7 +83,31 @@ public class Demo {
             }
         }
         stringListIterator.add(newCity);
+        return true;
     }
+
+
+    public static void visit(LinkedList cities) {
+        Scanner scanner = new Scanner(System.in);
+        boolean quit = false;
+        ListIterator<String> listIterator = cities.listIterator();
+
+        if(cities.isEmpty()) {
+            System.out.println("No cities in the itinerary");
+            return;
+        } else {
+            System.out.println("Now visiting " + listIterator.next());
+            printMenu();
+        }
+
+    }
+
+
+    public static void printMenu() {
+
+    }
+
+
 
 
 }
