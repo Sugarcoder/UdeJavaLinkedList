@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // 4 bites in each integer
+        // 4 bytes in each integer
 
 
         Customer customer = new Customer("Tim", 20.50);
